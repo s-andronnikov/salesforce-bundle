@@ -27,6 +27,11 @@ class Configuration implements ConfigurationInterface
                         ->scalarNode('password')->isRequired()->end()
                         ->scalarNode('token')->isRequired()->end()
                         ->scalarNode('logging')->defaultValue('%kernel.debug%')->end()
+                        ->arrayNode('options')
+                            ->children()
+                                ->scalarNode('cache_wsdl')->defaultValue(WSDL_CACHE_DISK)->end()
+                            ->end()
+                        ->end()
                     ->end()
                 ->end()
             ->end();

@@ -33,7 +33,7 @@ class PhpforceSalesforceExtension extends Extension
 
         if (true == $config['soap_client']['logging']) {
             $builder = $container->getDefinition('phpforce.soap_client.builder');
-//            $builder->addMethodCall('withLog', array(new Reference('phpforce_salesforce.logger')));
+            $builder->addMethodCall('withLog', array(new Reference('phpforce_salesforce.logger')));
         }
     }
 
